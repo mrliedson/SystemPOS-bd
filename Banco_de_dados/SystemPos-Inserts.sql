@@ -165,3 +165,34 @@ VALUES (1, 'João Silva', '12345678900', '11999999999');
 
 
 
+
+
+
+
+
+
+
+
+INSERT INTO cliente (empresa_id, nome_completo, cpf, telefone, email, endereco)
+VALUES
+(1, 'Cliente 4', '44444444444', '11955555555', 'cliente4@test.com', 'Rua D, 400'),
+(1, 'Cliente 5', '55555555555', '11944444444', 'cliente5@test.com', 'Rua E, 500');
+INSERT INTO cadastro_produto (empresa_id, codigo_produto, nome, marca, codigo_barras, tipo_produto, modelo, categoria, data_validade, estoque_min, estoque_max, preco, imagem, quantidade)
+VALUES
+(1, 1001, 'Produto A', 'Marca X', '1234567890123', 'Alimento', 'Modelo A', 'Categoria 1', '2025-12-31', 1, 50, 20.00, 'imagem1.png', 10),
+(1, 1002, 'Produto B', 'Marca Y', '1234567890124', 'Alimento', 'Modelo B', 'Categoria 2', '2025-11-30', 2, 40, 35.00, 'imagem2.png', 15),
+(1, 1003, 'Produto C', 'Marca Z', '1234567890125', 'Bebida', 'Modelo C', 'Categoria 3', '2025-10-31', 1, 30, 50.00, 'imagem3.png', 5);
+
+INSERT INTO historico_estoque (codigo_produto, tipo_movimentacao, quantidade, usuario_id, data_movimentacao)
+VALUES
+(1, 'entrada', 5, 1, '2025-08-26 09:00:00'),
+(2, 'entrada', 3, 1, '2025-08-27 10:00:00'),
+(3, 'saida', 2, 1, '2025-08-28 11:00:00');
+INSERT INTO gastos (empresa_id, descricao, valor, data_gasto, categoria)
+VALUES
+(1, 'Compra de embalagens', 50.00, '2025-08-28 08:00:00', 'Materiais'),
+(1, 'Manutenção equipamentos', 120.00, '2025-08-29 09:00:00', 'Despesas');
+
+
+
+

@@ -144,6 +144,7 @@ CREATE TABLE item_venda (
 );
 CREATE TABLE cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
     empresa_id INT NOT NULL,
     nome_completo VARCHAR(100) NOT NULL,
     cpf VARCHAR(11) UNIQUE NOT NULL CHECK (cpf REGEXP '^[0-9]{11}$'),
@@ -168,7 +169,8 @@ CREATE TABLE historico_estoque (
 CREATE TABLE relatorio_exportado (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
-    tipo_relatorio ENUM('venda', 'ganhos', 'gastos', 'estoque', 'clientes') NOT NULL,
+    empresa_id INT NOT NULL,
+    tipo_relatorio ENUM('venda', 'ganhos', 'gastos', 'estoque', 'clientes', 'geral') NOT NULL,
     data_geracao DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
